@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
       {isOpen && (
@@ -30,13 +30,13 @@ export default function App() {
           <div className="buttons">
             <button
               style={{ backgroundColor: "#7950f2", color: "#fff" }}
-              onClick={() => step > 1 && setStep(step - 1)}
+              onClick={() => step > 1 && setStep((s) => s - 1)}
             >
               Previous
             </button>
             <button
               style={{ backgroundColor: "#7950f2", color: "#fff" }}
-              onClick={() => step < 3 && setStep(step + 1)}
+              onClick={() => step < 3 && setStep((s) => s + 1)}
             >
               Next
             </button>
